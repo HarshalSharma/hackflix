@@ -1,0 +1,30 @@
+<div class="container" style="height: 50px; margin-top: 50px;">
+  <div class="row">
+    <div class="col-lg-10 col-sm-10">
+      <input type="text" class="form-control" placeholder="search movies">
+    </div>
+    <div class="col-lg-2 col-sm-2">
+      <button mat-raised-button [matMenuTriggerFor]="menu">Filter By</button>
+      <mat-menu #menu="matMenu">
+        <ng-container *ngFor="let menuName of menuNames">
+          <button mat-menu-item (click)="filterBy(menuName)">{{menuName}}</button>
+        </ng-container>
+      </mat-menu>
+    </div>
+  </div>
+</div>
+
+<mat-grid-list cols="3" rowHeight="4:3">
+
+  <div *ngFor="let movie of shownMovies">
+    <mat-grid-tile>
+      <app-movieitem [movie]="movie"></app-movieitem>
+    </mat-grid-tile>
+  </div>
+
+
+</mat-grid-list>
+<div *ngIf="size<movies.length" class="text-center" style="width: 100%;">
+  <button class="" mat-stroked-button (click)="loadMore()">Load More</button>
+</div>
+<br />

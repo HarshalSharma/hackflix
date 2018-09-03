@@ -1,0 +1,18 @@
+<mat-card class="movie-card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="movie-header"></div> -->
+    <mat-card-title><strong>{{movie.movie_title}}</strong></mat-card-title>
+    <mat-card-subtitle>{{movie.genres}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    Released in <u>{{movie.title_year}}</u> by <b>{{movie.director_name}}</b> with the budget of {{movie.budget}} $. 
+    <br/>
+    Featuring Actors <strong>{{movie.actor_1_name}}</strong> and <strong>{{movie.actor_2_name}}</strong>.
+    <br/>
+    Is a <small>{{movie.country}} | {{movie.content_rating}}</small> movie.
+  </mat-card-content>
+  <mat-card-actions>
+      <a mat-button href="{{movie.movie_imdb_link}}" target="_blank">IMDB</a>
+  </mat-card-actions>
+</mat-card>
